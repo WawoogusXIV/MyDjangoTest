@@ -3,6 +3,7 @@
 {% block content %}
     <article class="post">
         <aside class="actions">
+            {% if user.is_authenticated %}
             <a class="btn btn-secondary" href="{% url 'post_edit' post.pk %}">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
@@ -10,6 +11,7 @@
                 </svg>
             
             </a>
+            {% endif %}
         </aside>
         {% if post.published_date %}
             <time class="date">
